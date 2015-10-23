@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">simpleGrid</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="name1">ass</string>
+    <string name="name2">body</string>
+    <string name="name3">id</string>
+    <string name="name4">isHiden</string>
+    <string name="name1_">function</string>
+    <string name="zero" />
+</resources>
