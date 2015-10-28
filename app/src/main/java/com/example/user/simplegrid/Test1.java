@@ -52,8 +52,6 @@ public class Test1 {
 
     @ColumnTable(name = R.string.name2, index = 1, width =10,gravityHeader = Gravity.CENTER )
     public String getName(){
-        return "asas";
+        return "name";
     }
-
-
 }

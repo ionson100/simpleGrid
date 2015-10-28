@@ -42,5 +42,4 @@ public @interface ColumnTable {
     int styleHeader() default 0;
     int styleData() default 0;
     boolean isImage() default false;
-
 }

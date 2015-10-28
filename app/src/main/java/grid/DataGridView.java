@@ -21,30 +21,28 @@ import java.util.Observer;
 public class DataGridView<T> extends LinearLayout {
 
     private static Map<String,Observer> observerMap=new HashMap<>();
-
-    private SelectMode selectMode;
-    private int widthGrid;
-
-
-
-
-    private IDataGridEvents iDataGridEvents;
-    private List<T> selectObjectList=new ArrayList<>();
-    private List<TableRow> selectRowsList=new ArrayList<>();
-    private Context context;
-    private TableLayout tableLayoutHeader;
     TableLayout tableLayoutCore;
-
-    private Observer observer;
     HorizontalScrollView horizontalScrollView;
     ScrollView scrollView;
     LinearLayout baseRow;
     TableRow baseRowData;
+    private SelectMode selectMode;
+    private int widthGrid;
+    private IDataGridEvents iDataGridEvents;
+    private List<T> selectObjectList = new ArrayList<>();
+    private List<TableRow> selectRowsList = new ArrayList<>();
+    private Context context;
+    private TableLayout tableLayoutHeader;
+    private Observer observer;
    private List<T> dataSource;
 
     public DataGridView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context=context;
+
+        if (context instanceof IDataGridEvents) {
+            iDataGridEvents = (IDataGridEvents) context;
+        }
 
         horizontalScrollView=new HorizontalScrollView(this.context);
         LinearLayout baseLinearLayout=new LinearLayout(context);
@@ -132,7 +130,7 @@ public class DataGridView<T> extends LinearLayout {
         }
 
 
-        SettingsTable settingsTable = (SettingsTable) dataSource.get(0).getClass().getAnnotation(SettingsTable.class);
+        SettingsTable settingsTable = dataSource.get(0).getClass().getAnnotation(SettingsTable.class);
         if(settingsTable !=null){
             selectMode= settingsTable.SELECT_MODE();
         }
@@ -194,9 +192,9 @@ public class DataGridView<T> extends LinearLayout {
         return selectRowsList;
     }
 
-    public void setIDataGridEvents(IDataGridEvents iDataGridEvents) {
-        this.iDataGridEvents=iDataGridEvents;
-    }
+//    public void setIDataGridEvents(IDataGridEvents iDataGridEvents) {
+//        this.iDataGridEvents=iDataGridEvents;
+//    }
 
     public SelectMode getSelectMode() {
         return selectMode;
