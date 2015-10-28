@@ -25,6 +25,7 @@ import java.lang.annotation.Target;
  *@styleHeader стиль для элемента заголовка
  *@styleData   стиль для элемента данных
  *@isImage в элементе находится картинка, тип элемента должен бвть int ( указатель на ресурс картинки)
+ * styleHeader и styleData  перекрывают  настройки - кроме цветов строки.
  */
 public @interface ColumnTable {
     int name();

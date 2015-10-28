@@ -3,13 +3,13 @@ package com.example.user.simplegrid;
 import android.graphics.Color;
 import android.view.Gravity;
 
-import grid.SettingsTable;
 import grid.ColumnTable;
 import grid.SelectMode;
+import grid.SettingsTable;
 
 @SettingsTable(
-        backgroundColor = Color.BLACK,
-        foreColor = Color.WHITE,
+        backgroundColorRowHeader = Color.BLACK,
+        textColorRowHeader = Color.WHITE,
         SELECT_MODE = SelectMode.SingleRow,
         isSortable = true,
         colorTextSelectRows = Color.WHITE,
@@ -20,6 +20,18 @@ import grid.SelectMode;
 public class Test1 {
     @ColumnTable(name = R.string.name1, index = 0, width =20,gravityHeader = Gravity.CENTER,leftPaddingItems = 100)
     public String name;
+    @ColumnTable(
+            name = R.string.name3,
+            index = 2,
+            width = 22,
+            gravityHeader = Gravity.CENTER,
+            stringFormat = "%.2f",
+            styleData = R.style.boldText,
+            styleHeader = R.style.boldText
+    )
+    public int id;
+    @ColumnTable(name = R.string.name4, index = 3, width = 10, gravityHeader = Gravity.CENTER, gravityItems = Gravity.CENTER)
+    public boolean isHiden;
 
     @ColumnTable(
             name = R.string.zero,
@@ -42,19 +54,6 @@ public class Test1 {
     public String getName(){
         return "asas";
     }
-    @ColumnTable(
-            name = R.string.name3,
-            index = 2,
-            width =22,
-            gravityHeader = Gravity.CENTER,
-            stringFormat = "%.2f",
-            styleData = R.style.boldText,
-            styleHeader = R.style.boldText
-    )
-    public int id;
-
-    @ColumnTable(name = R.string.name4, index = 3, width =10,gravityHeader = Gravity.CENTER,gravityItems = Gravity.CENTER)
-    public  boolean isHiden;
 
 
 }

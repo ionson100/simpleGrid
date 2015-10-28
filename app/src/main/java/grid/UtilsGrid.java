@@ -11,8 +11,6 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.example.user.simplegrid.R;
-
 import java.lang.reflect.InvocationTargetException;
 import java.text.DecimalFormat;
 import java.util.Collections;
@@ -23,6 +21,8 @@ import java.util.List;
  * Created by USER on 21.10.2015.
  */
 public class UtilsGrid {
+    static String fchar = String.valueOf(((char) 160));
+
     /**
      * Получение заголовка таблици
      * @param aClass тип данных для таблици
@@ -72,8 +72,8 @@ public class UtilsGrid {
 
         if(settingsTable !=null){
             isSortable= settingsTable.isSortable();
-            foreColor= settingsTable.foreColor();
-            backColor= settingsTable.backgroundColor();
+            foreColor = settingsTable.textColorRowHeader();
+            backColor = settingsTable.backgroundColorRowHeader();
             hrow= settingsTable.rowHeightHeader();
             backgroundGr= settingsTable.colorGridHeader();
             isShowGrid= settingsTable.isShowGrid();
@@ -186,6 +186,7 @@ public class UtilsGrid {
         int hrow=50;
         boolean isShowGrid=true;
         int sizeGrid=2;
+
 
         if(settingsTable !=null){
 
@@ -321,6 +322,9 @@ public class UtilsGrid {
                 if (cd.columnTable.styleData()!=0){
                     tv.setTextAppearance(context, cd.columnTable.styleData());
                 }
+                if (cd.columnTable.styleData() != 0) {
+                    tv.setTextAppearance(context, cd.columnTable.styleData());
+                }
                 row.addView(tv);
 
             }
@@ -442,6 +446,7 @@ public class UtilsGrid {
             }
 
     }
+
     public static int integerTryParse(String str){
         int res=0;
         if(str.trim().length()>0){
@@ -455,10 +460,6 @@ public class UtilsGrid {
         return res;
     }
 
-
-
-
-    static String fchar=String.valueOf(((char) 160));
     public static double doubleTryParse(String str){
         double res=0;
         if(str.trim().length()>0){
