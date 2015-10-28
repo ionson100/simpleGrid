@@ -1,4 +1,4 @@
-# SimpleGrid for Android
+# Simple Grid for Android
 ======
 **Usage grid.**
 
