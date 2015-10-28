@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements IDataGridEvents {
         if (list.size() <= 0) return;
         Test1 tt = (Test1) list.get(0);
 
-        Toast.makeText(this, tt.name, 2).show();
+        Toast.makeText(this, tt.name, 1).show();
     }
 
     @Override
